@@ -76,7 +76,8 @@ class emulator(object):
 
         '''
 # This is giving format to f, x, and theta; as well as catching exceptions. 
-        print("Got here")
+#        print("Got here 1")
+    
         if ('warnings' in args.keys()) and args['warnings']:
             warnings.resetwarnings()
         else:
@@ -103,6 +104,8 @@ class emulator(object):
         else:
             raise ValueError('You have not provided f, cannot include theta'
                              ' or x.')
+            
+#        print("Got here 2")
 
         if x is not None and (f.shape[0] != x.shape[0]):
             if theta is not None:
@@ -122,6 +125,7 @@ class emulator(object):
                 else:
                     raise ValueError('The number of rows in f must match the'
                                      ' number of rows in x.')
+  #      print("Got here 3")
 
         if theta is not None and (f.shape[1] != theta.shape[0]):
             if x is not None:
@@ -176,6 +180,8 @@ class emulator(object):
 
         if (self.__f is not None) and (self.__options['autofit']):
             self.fit()
+            
+     #   print("Emulator created")
 
     def __repr__(self):   #Thus is a special method used to represent a class's objects as a string. 
         object_method = [method_name for method_name in dir(self)
@@ -247,6 +253,7 @@ class emulator(object):
 
         '''
 
+  #      print("Got to predict")
         if self.__ptf is not None:
             info = {}
             if theta is not None:
@@ -305,6 +312,7 @@ class emulator(object):
 
         info = {}
         self.method.predict(info, self._info, x, theta, args=argstemp)
+      #  print("Finished predict")
         return prediction(info, self)
 
     def supplement(self,

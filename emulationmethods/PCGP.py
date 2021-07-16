@@ -41,7 +41,7 @@ def fit(fitinfo, x, theta, f, args=None):
     None.
 
     '''
-
+  #  print("Entered PCGP")
     f = f.T
     fitinfo['theta'] = theta
     fitinfo['x'] = x
@@ -95,7 +95,8 @@ def predict(predinfo, fitinfo, x, theta, args=None):
     -------
     Prediction mean and variance at theta and x given the dictionary fitinfo.
     '''
-
+   # print("Entered predict in PCGP")
+    
     infos = fitinfo['emulist']
     predvecs = np.zeros((theta.shape[0], len(infos)))
     predvars = np.zeros((theta.shape[0], len(infos)))
