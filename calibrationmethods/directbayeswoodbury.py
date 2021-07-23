@@ -1,6 +1,6 @@
 import numpy as np
 import scipy.stats as sps
-from surmise.utilities import sampler
+from utilities import sampler
 import copy
 
 
